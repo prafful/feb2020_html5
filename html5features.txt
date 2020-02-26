@@ -1,0 +1,11 @@
+Semantic Features -> Structure or organize your web page!
+
+New Form Elements -> number, date, color, range
+
+Graphics Support -> canvas, svg, canvas API, svg API
+
+Media Support -> media
+
+HTML5 API -> web/local storage, session storage, geolocation api, 
+            drag and drop api, sse (server sent events) api, web workers,   
+            application cache api

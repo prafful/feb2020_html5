@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Form Elements</title>
+</head>
+
+<body>
+    <h3>
+        New HTML5 Form Elements (Custom Validation Message!)
+    </h3>
+    <form autocomplete="off">
+        <fieldset>
+            <legend>Personal Detail</legend>
+            <div>
+                <label>Full Name: </label>
+                <input type="text" required autofocus  ="Input full name...."
+                    oninvalid="this.setCustomValidity('Enter Full Name. Alphabets Only!')"
+                    oninput="this.setCustomValidity('')
+                    ">
+            </div>
+            <div>
+                <label>Date Of Birth:</label>
+                <input type="date" min="2020-02-22" max="2021-02-28" id="mydate">
+                <button onclick="setCurrentDate()">Get Current Date</button>
+            </div>
+            <div>
+                <label>Years Since Married: </label>
+                <input type="number" min="2" max="25" step="2">
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Contact</legend>
+            <div>
+                <label>Email:</label>
+                <input type="email" >
+            </div>
+            <div>
+                <label>Website</label>
+                <input type="url">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Skills</legend>
+            <div>
+                <label>Rate HTML5 skill from 1 to 10:</label>
+                <input type="range" min="0" max="10" step="2">
+            </div>
+            <div>
+                <label>Learning Progress</label>
+                <progress value="55" max="100"></progress>
+            </div>
+
+        </fieldset>
+        <br>
+        <label>Your favourite color: </label>
+        <input type="color">
+        <br>
+        <label>Friends: </label>
+        <input type="text" list="friendnames">
+
+        <datalist id="friendnames">
+            <option value="mohan">Mohan</option>
+            <option value="zikhu">Zikhu</option>
+            <option value="pranky">Pranky</option>
+            <option value="prabhu">Prabhu</option>
+            <option value="mokul">Mokul</option>
+            <option value="pradip">Pradip</option>
+            <option value="moti">Moti</option>
+            <option value="monu">Monu</option>
+        </datalist>
+        <br>
+
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <script>
+
+        function setCurrentDate() {
+            var mydateRef = document.getElementById('mydate')
+            //mydateRef.min = new Date()
+            var currentDate = new Date()
+            var currentDay = currentDate.getDate()
+            console.log(currentDay);
+            var currentMonth = currentDate.getMonth() + 1
+            console.log(currentMonth);
+            var currentYear = currentDate.getFullYear()
+            console.log(currentYear);
+            //2020-2-22
+            var mydatevalue = currentYear+'-0'+currentMonth + '-'+ currentDay
+            console.log(mydatevalue);
+            //mydateRef.min = currentYear+'-'+currentMonth + '-'+ currentDay
+            mydateRef.min = mydatevalue
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>
