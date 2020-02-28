@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTMl5 Canvas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <canvas id="mycanvas" 
+                width="400" 
+                height="400"
+                style="border: 1px solid goldenrod;">
+
+        </canvas>
+        
+
+     <script>
+         var canvasRef = document.getElementById('mycanvas')
+         //set context -> initializing the canvas or graphics mode!
+         var context = canvasRef.getContext("2d")
+         //ready to draw some graphics
+         //draw line
+         context.moveTo(0, 0 )
+         context.lineTo(400, 400)
+         context.stroke()
+         context.moveTo(400, 0 )
+         context.lineTo(0, 400)
+         context.stroke()
+
+         //draw rectangle
+         context.fillStyle = 'green'
+         context.fillRect(10, 10, 150, 100)
+         context.fillRect(240, 10, 150, 100)
+        
+         //draw font 
+         context.font = '40px serif'
+         context.strokeText("Hello Canvas!", 90, 380)
+
+         //draw circle
+         context.beginPath()
+         context.arc(200,260, 60, 0, Math.PI*2, true)
+         context.moveTo(225, 250)
+         context.arc(225,250, 10, 0, Math.PI*2, true)
+         context.moveTo(175, 250)
+         context.arc(175,250, 10, 0, Math.PI*2, true)
+         context.moveTo(200, 270)
+         context.arc(200,270, 10, 0, Math.PI*2, true)
+         context.moveTo(200, 290)
+         context.arc(200,290, 20, 0, Math.PI, false)
+
+         
+
+         context.stroke()
+     </script>
+    </body>
+</html>

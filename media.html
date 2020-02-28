@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML5 mEDIA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+    <h1>HTML5 Video</h1>
+    <video id="myvideo"  
+        width="400"  
+        controls 
+        muted 
+        loop 
+        poster="images/vlcsnap-2019-12-27-12h20m16s837.png">
+        <source src="video/dolbycanyon.mp4" >
+        
+    </video>
+    <br>
+    <button onClick="videoPlay()" >Play</button>
+    <button onClick="videoPause()">Pause</button>
+    <br>
+    <br>
+    <h3>Youtube Video</h3>
+    <iframe width="400"  src="https://www.youtube.com/embed/frp4vfciLbA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    <script>
+        var videoRef = document.getElementById('myvideo')
+
+        videoPlay = function(){
+            videoRef.play()
+        }
+
+        videoPause = function(){
+            videoRef.pause()
+        }
+
+
+
+    </script>
+    </body>
+</html>

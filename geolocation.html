@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 GeoLocation</title>
+</head>
+<body>
+    <h1>Get Current Position!</h1>
+    <div id="mylocation">
+
+    </div>
+    <br>
+    <button onClick="getPosition()">Get Current Position!</button>
+    <script>
+        var locRef = document.getElementById('mylocation')
+        locRef.textContent = "Get current position in latitude and longitude!"
+
+        getPosition = function(){
+            navigator.geolocation.getCurrentPosition(function(location){
+                console.log(location);
+                console.log('Latitude: ' + location.coords.latitude);
+                console.log('Longitude: ' + location.coords.longitude);
+            }, function(error){
+                console.log(error);
+            })
+        }
+
+    </script>
+</body>
+</html>
