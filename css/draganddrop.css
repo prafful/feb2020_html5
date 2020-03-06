@@ -1,0 +1,21 @@
+#dragstartdiv{
+    background-color: antiquewhite;
+    border: 2px solid pink;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+}
+
+#droptarget{
+    float: right;
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    border: 1px solid red;
+    background-color: powderblue;
+}
+
+
+.testclass{
+   
+}

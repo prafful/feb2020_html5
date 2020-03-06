@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/draganddrop.css">
+       
+    </head>
+    <body>
+        <h1>Drag And Drop</h1>
+        <div id="dragstartdiv" 
+            ondragover="dragOverSourceDiv(event)"
+            ondrop="dropToParentBack(event)">
+            <img src="./images/heart.png" 
+                id="dragme"
+                width="100"
+                draggable="true"
+                ondragstart="iAmDragged(event)"
+                >
+
+        </div>
+
+        <div id="droptarget" 
+            class="testclass" 
+            ondragover="dragOverTargetDiv(event)"
+            ondrop="dropItemHere(event)">
+
+            Drop item here!
+        </div>
+
+        <script>
+            var counter = 1
+            dragOverSourceDiv = function(e){
+                e.preventDefault()      
+                console.log("dragging over the source div " )
+                //console.log(e); 
+                        
+            }
+
+            dragOverTargetDiv = function(e){
+                e.preventDefault()
+                console.log("dragging over target div " )
+                //console.log(e);
+            }
+
+            iAmDragged = function(e){
+                //e.preventDefault();
+                console.log("dragging me -> image")
+                console.log(e.dataTransfer)
+                console.log(e.target.id);
+                e.dataTransfer.setData("myid", e.target.id)
+            }
+            
+            dropItemHere = function(e){
+                //e.preventDefault()
+                var imageId = e.dataTransfer.getData("myid")
+                var getImageRef = document.getElementById(imageId)
+                console.log(getImageRef);
+                //console.log("Dropping item!")
+                //var received = e.dataTransfer.getData("myitem")
+                //console.log(received)
+                e.target.innerHTML = ""
+                e.target.appendChild(getImageRef)
+            }
+
+            dropToParentBack = function(e){
+                var imageId = e.dataTransfer.getData("myid")
+                var getImageRef = document.getElementById(imageId)
+                console.log(getImageRef);
+                e.target.appendChild(getImageRef)
+            }
+
+        </script>
+    </body>
+</html>
