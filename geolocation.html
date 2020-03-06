@@ -21,6 +21,7 @@
                 console.log(location);
                 console.log('Latitude: ' + location.coords.latitude);
                 console.log('Longitude: ' + location.coords.longitude);
+                locRef.innerHTML = 'Latitude: ' + location.coords.latitude + "<br>" + 'Longitude: ' + location.coords.longitude
             }, function(error){
                 console.log(error);
             })

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML5 Local Storage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <h1>Local Storage</h1>
+        <div id="container">
+            Counter Value
+        </div>
+        <br>
+        <button onClick="incrementNumber()">Plus</button>
+        
+        <script>
+            var containerRef = document.getElementById("container")
+
+            incrementNumber = function(){
+                console.log("Inside increment number!");
+                if(localStorage.counter == undefined){
+                    localStorage.counter = 0
+                }else{
+                    localStorage.counter++ 
+                }
+                containerRef.innerText = localStorage.counter
+            }
+
+        </script>
+    </body>
+</html>

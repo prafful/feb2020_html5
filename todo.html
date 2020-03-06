@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Task Manager</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body onload="initialize()">
+        <h3>Task Manager</h3>
+        <label>Task</label>
+        <input type="text" id="taskvalue">
+        <button onClick="addTask()">Add Task</button>
+        <span id="message"></span>
+        <br>
+        <br>
+        <ol id="taskcontainer">
+            <li>Plan a trip to Pichawaram</li>
+            <li>Rearrange the lab!sdf</li>
+        </ol>
+    </body>
+
+
+    <script>
+        var counter = 0
+        initialize = function(){
+            console.log("Body is loaded 100% from DOM!");    
+            console.log("Do necessry initializations!");
+            if(localStorage.counter == undefined){
+                localStorage.setItem("counter", 0)
+                var counter = localStorage.counter 
+            }else{
+                var counter = localStorage.counter 
+                
+            }
+
+        }
+    
+        addTask = function(){
+            console.log("addTask called!");
+            //get the value of text in input text field
+            var taskText = document.getElementById("taskvalue").value
+            console.log("Task: " + taskText);
+            if(taskText == '' || taskText.length<4){
+                console.log("Task is blank!");
+                document.getElementById('message').innerHTML = "Task Must not be blank and minimum length of task must be 4!"
+            }else{
+                currentTaskCounter= "task_"+counter++
+                localStorage.setItem(currentTaskCounter, taskText)
+                localStorage.counter++
+
+
+                document.getElementById('message').innerHTML = ""
+                //create new li element in DOM
+                //but new li element will be detached from DOM
+                var newli = document.createElement('li')
+                //set innerHTML of new li element to the taskText
+                //newli variable is the reference to new li element
+                newli.innerHTML = taskText
+                //attach the new li element (newli) to the DOM
+                //by appending it to the ol as a child!
+                //get ref to ol
+                var olref = document.getElementById("taskcontainer")
+                //append newli as child to olref
+                olref.appendChild(newli)
+                //empty the input field value once task text is captured!
+                document.getElementById("taskvalue").value = ""
+            }
+            
+
+
+        }
+    </script>
+
+
+</html>
