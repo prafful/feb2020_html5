@@ -1,0 +1,98 @@
+header{
+    height: 100vh;
+    background-size: cover;
+    color: white;
+    background: linear-gradient(to right, rgba(255, 111, 111, 0.5), rgba(87, 90, 255, 0.1));
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo{
+    width: 400px;
+    margin-left: 100px;
+    margin-top: 100px;
+    float:left;
+}
+
+.imagebackground{
+    position: fixed;
+    z-index: -100;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    right: 0;
+    bottom: 0;
+}
+
+.menu{
+    list-style: none;
+    float: right;
+    margin-top: 100px;
+}
+
+.eachitem{
+    display: inline;
+    font-size: 260%;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.eachitem:hover{
+    color: maroon;
+    border: 1px solid goldenrod;
+    background-color: lavenderblush;
+    border-radius: 10px;
+    display: inline;
+    font-size: 260%;
+    margin-right: 50px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.messagecontianer{
+    position: absolute;
+    top:53%;
+    left:6%;
+    font-size: 600%;
+
+}
+
+.highlight{
+    font-weight: bold;
+    color: brown;
+    text-shadow: 1px 4px whitesmoke;
+}
+
+.buttoncontainer{
+    position: absolute;
+}
+
+button{
+    font-size: 80%;
+    background-color: tomato;
+    padding: 20px;
+    margin-top: 50px;
+    margin-right: 50px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+
+button:hover{
+    color: mediumvioletred;
+    font-size: 100%;
+    background-color: orange;
+    padding: 20px;
+    margin-top: 50px;
+    margin-right: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
